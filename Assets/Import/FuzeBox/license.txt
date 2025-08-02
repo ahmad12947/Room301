@@ -1,0 +1,11 @@
+Model Information:
+* title:	Small Fuse Box
+* source:	https://sketchfab.com/3d-models/small-fuse-box-1818361dc6554d17bef8c0400959f93f
+* author:	big guy (https://sketchfab.com/ondra.lit)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Small Fuse Box" (https://sketchfab.com/3d-models/small-fuse-box-1818361dc6554d17bef8c0400959f93f) by big guy (https://sketchfab.com/ondra.lit) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

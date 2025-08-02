@@ -1,0 +1,11 @@
+Model Information:
+* title:	Retro Table Lamp
+* source:	https://sketchfab.com/3d-models/retro-table-lamp-888209bbca0c4709bb24f7bfa01028c1
+* author:	Maxim Silkov (https://sketchfab.com/SilkovM)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Retro Table Lamp" (https://sketchfab.com/3d-models/retro-table-lamp-888209bbca0c4709bb24f7bfa01028c1) by Maxim Silkov (https://sketchfab.com/SilkovM) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

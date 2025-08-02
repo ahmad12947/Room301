@@ -1,2 +1,40 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.psd filter=lfs diff=lfs merge=lfs -text
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Explicitly mark known binary files. "binary" prevents Git from doing line-ending normalization or diffing for these files.
+*.dll binary
+*.exe binary
+*.so binary
+*.dylib binary
+*.lib binary
+*.a binary
+*.bundle binary
+
+
+# Unity-specific binary assets
+*.unity binary
+*.prefab binary
+*.asset binary
+*.fbx binary
+*.png binary
+*.jpg binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.mat binary
+*.anim binary
+*.controller binary
+*.overrideController binary
+*.mask binary
+*.meta text
+
+# Optional: Keep C# and text scripts clean. "text eol=lf" ensures consistent LF endings on source files across platforms.
+*.cs text eol=lf
+*.shader text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.md text eol=lf

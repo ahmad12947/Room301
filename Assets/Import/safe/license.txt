@@ -1,0 +1,11 @@
+Model Information:
+* title:	Damaged Safe
+* source:	https://sketchfab.com/3d-models/damaged-safe-8851c90e746c444a8a009ccfab4310f0
+* author:	Oscar Goldsworthy (https://sketchfab.com/oscargoldsworthy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Damaged Safe" (https://sketchfab.com/3d-models/damaged-safe-8851c90e746c444a8a009ccfab4310f0) by Oscar Goldsworthy (https://sketchfab.com/oscargoldsworthy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

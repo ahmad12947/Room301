@@ -39,7 +39,7 @@ public class DoorAndBookInteractor : MonoBehaviour
     [Header("Fuse Interaction")]
     public GameObject fuseObject;
     public Light[] fuseEnableObjects;
-    public Text objectiveText;
+    public Text objectiveText, npcText;
     public string newObjectiveAfterFuse = "Find a way to unlock Room 301";
 
     public AudioClip fuzeAudioClip, safeAudioClip;
@@ -130,6 +130,7 @@ public class DoorAndBookInteractor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     objectiveText.text = "Find out where the ghost lives";
+                    Player2TTS.SpeakWithVoice("The pen awaits your question From 301", "01955d76-ed5b-7451-92d6-5ef579d3ed28");
                     hasUnlockedBook = true;
                     OpenBookView();
                 }

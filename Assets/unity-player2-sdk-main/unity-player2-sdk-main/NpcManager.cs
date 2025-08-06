@@ -55,7 +55,7 @@ public class FunctionArgument
 
 
 public class NpcManager : MonoBehaviour
-{
+{   //01955d76-ed5b-7451-92d6-5ef579d3ed28
     [Header("Config")]
     [SerializeField] public string gameId = "your-game-id";
     private HashSet<string> _calledFunctions = new HashSet<string>();
@@ -142,8 +142,10 @@ public class NpcManager : MonoBehaviour
             {
                 if (!string.IsNullOrEmpty(response.message))
                 {
+                    string cleanMessage = System.Text.RegularExpressions.Regex.Replace(response.message, @"^<[^>]+>\s*", "");
                     Debug.Log($"Updating UI for NPC {id}: {response.message}");
-                    onNpcResponse.text = response.message;
+                    onNpcResponse.text = cleanMessage;
+                Player2TTS.SpeakWithVoice(cleanMessage, "01955d76-ed5b-7451-92d6-5ef579d3ed28");
                 }
 
 

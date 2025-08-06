@@ -82,6 +82,7 @@ public class Player2Npc : MonoBehaviour
     private void OnChatMessageSubmitted(string message)
     {
         _ = SendChatMessageAsync(message);
+        Player2TTS.SpeakWithVoice(message, "01955d76-ed5b-74de-83e5-800a44fee0d1");
     }
 
     private async Awaitable SpawnNpcAsync()
@@ -187,6 +188,7 @@ public class Player2Npc : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.Success)
         {
+           
             Debug.Log($"Message sent successfully to NPC {_npcID}");
         }
         else

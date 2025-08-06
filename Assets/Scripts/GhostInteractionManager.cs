@@ -20,6 +20,7 @@ public class GhostInteractionManager : MonoBehaviour
             outputText.text = "STAY AWAY!! I warned you";
             objectiveTxt.text = "Find the fuze box and turn on the power.";
             Debug.Log($"[GhostInteraction] Turned off light: {lightName}");
+            Player2TTS.SpeakWithVoice(outputText.text, "01955d76-ed5b-7451-92d6-5ef579d3ed28");
             fuzeBox.enabled = true;
             effect.enabled = true;
             flashLight.SetActive(true);
@@ -48,6 +49,7 @@ public class GhostInteractionManager : MonoBehaviour
         string hint = hints[Random.Range(0, hints.Length)];
         Debug.Log($"[NPC Hint]: {hint}");
         outputText.text = hint;
+        Player2TTS.SpeakWithVoice(outputText.text, "01955d76-ed5b-7451-92d6-5ef579d3ed28");
         //Npc2.SetActive(false);
         //Npc3.SetActive(true);
 

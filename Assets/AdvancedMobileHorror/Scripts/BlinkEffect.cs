@@ -8,20 +8,33 @@ namespace AdvancedHorrorFPS
         public Color startColor = Color.green;
         public Color endColor = Color.black;
         [Range(0, 10)]
-        public float speed = 1;
-        Material a;
-        Renderer ren;
+        public float speed = 1f;
+
+        public Renderer targetRenderer; // Assign in Inspector
+
+        private MaterialPropertyBlock propBlock;
+        private int emissionColorID;
 
         void Awake()
         {
-            ren = GetComponentInChildren<Renderer>();
-            a = ren.material;
-            a.EnableKeyword("_EMISSION");
+            if (targetRenderer == null)
+            {
+                Debug.LogWarning($"BlinkEffect on {gameObject.name}: targetRenderer is not assigned.");
+                enabled = false;
+                return;
+            }
+
+            // Prepare property block and emission ID
+            propBlock = new MaterialPropertyBlock();
+            emissionColorID = Shader.PropertyToID("_EmissionColor");
+
+            // Make sure emission is enabled on the material itself (in editor)
+            targetRenderer.material.EnableKeyword("_EMISSION");
         }
 
         private void Start()
         {
-            if(!AdvancedGameManager.Instance.blinkOnInteractableObjects)
+            if (!AdvancedGameManager.Instance.blinkOnInteractableObjects)
             {
                 this.enabled = false;
             }
@@ -41,7 +54,13 @@ namespace AdvancedHorrorFPS
 
         void Update()
         {
-            a.SetColor("_EmissionColor", Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * speed, 1)));
+            float lerp = Mathf.PingPong(Time.time * speed, 1f);
+            Color emissionColor = Color.Lerp(startColor, endColor, lerp);
+
+            // Use property block to safely update emission
+            targetRenderer.GetPropertyBlock(propBlock);
+            propBlock.SetColor(emissionColorID, emissionColor);
+            targetRenderer.SetPropertyBlock(propBlock);
         }
     }
 }

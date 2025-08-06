@@ -11,7 +11,7 @@ public class Player2TTS : MonoBehaviour
     public static Player2TTS Instance { get; private set; }
 
     private const string DefaultVoiceId = "01955d76-ed5b-7451-92d6-5ef579d3ed28";
-    private const string TtsApiUrl = "http://127.0.0.1:4315/v1/tts/speak";
+    private const string TtsApiUrl = "http://localhost:4315/v1/tts/speak";
 
     void Awake()
     {

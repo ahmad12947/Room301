@@ -37,7 +37,7 @@ public class Player2TTS : MonoBehaviour
     {
         string jsonBody = JsonUtility.ToJson(new TTSRequest
         {
-            audio_format = "mp3",
+            audio_format = "wav",
             play_in_app = false,
             speed = 1f,
             text = text,
@@ -60,12 +60,12 @@ public class Player2TTS : MonoBehaviour
             else
             {
                 string json = www.downloadHandler.text;
-                TTSResponse response = JsonUtility.FromJson<TTSResponse>(json);
+                TTSResponse response = JsonUtility.FromJson<TTSResponse>(json); 
 
                 if (!string.IsNullOrEmpty(response.data))
                 {
                     byte[] audioBytes = Convert.FromBase64String(response.data);
-                    yield return PlayMP3FromBytes(audioBytes);
+                    yield return PlayWavFromBytes(audioBytes);
                 }
                 else
                 {
@@ -75,25 +75,72 @@ public class Player2TTS : MonoBehaviour
         }
     }
 
-    private IEnumerator PlayMP3FromBytes(byte[] audioData)
+    private IEnumerator PlayWavFromBytes(byte[] audioData)
     {
-        string tempFilePath = Path.Combine(Application.persistentDataPath, "tts_audio.mp3");
-        File.WriteAllBytes(tempFilePath, audioData);
+#if !UNITY_WEBGL
+    // Works for standalone/editor
+    string tempWavPath = Path.Combine(Application.streamingAssetsPath, "temp.wav");
+    File.WriteAllBytes(tempWavPath, audioData);
 
-        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + tempFilePath, AudioType.MPEG))
+    using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + tempWavPath, AudioType.WAV))
+    {
+        yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
         {
-            yield return www.SendWebRequest();
+            Debug.LogError("Failed to load WAV audio: " + www.error);
+        }
+        else
+        {
+            AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+    }
+#else
+        // WebGL fallback: parse WAV manually
+        AudioClip clip = WavBytesToAudioClip(audioData);
+        if (clip != null)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("Failed to parse WAV data in WebGL.");
+        }
+        yield return null;
+#endif
+    }
 
-            if (www.result != UnityWebRequest.Result.Success)
+
+    private AudioClip WavBytesToAudioClip(byte[] wavFile)
+    {
+        try
+        {
+            int channels = BitConverter.ToInt16(wavFile, 22);
+            int sampleRate = BitConverter.ToInt32(wavFile, 24);
+            int subchunk2 = BitConverter.ToInt32(wavFile, 40);
+            int samples = subchunk2 / 2;
+
+            float[] data = new float[samples];
+            int offset = 44;
+
+            for (int i = 0; i < samples; i++)
             {
-                Debug.LogError("Failed to load audio clip: " + www.error);
+                short sample = BitConverter.ToInt16(wavFile, offset);
+                data[i] = sample / 32768f;
+                offset += 2;
             }
-            else
-            {
-                AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-                audioSource.clip = clip;
-                audioSource.Play();
-            }
+
+            AudioClip audioClip = AudioClip.Create("TTS_Clip", samples, channels, sampleRate, false);
+            audioClip.SetData(data, 0);
+            return audioClip;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("WAV parsing failed: " + e.Message);
+            return null;
         }
     }
 

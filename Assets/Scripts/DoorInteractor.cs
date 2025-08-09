@@ -20,6 +20,7 @@ public class DoorAndBookInteractor : MonoBehaviour
     [Header("Book UI")]
     public GameObject bookUIObject;
     public GameObject inputFieldUI;
+    public GameObject bookHint;
     private Animator bookAnimator;
 
     [Header("Audio")]
@@ -240,7 +241,7 @@ public class DoorAndBookInteractor : MonoBehaviour
 
         if (closeBookSound && audioSource)
             audioSource.PlayOneShot(closeBookSound);
-
+        bookHint.SetActive(true );
         if (bookAnimator)
         {
             bookAnimator.Play("Close");
@@ -259,14 +260,14 @@ public class DoorAndBookInteractor : MonoBehaviour
         if (!bookHintShown)
         {
             bookHintShown = true;
-            ShowBookHint("Press Tab to open the book and communicate with the ghost.");
+            
         }
     }
 
     void ShowBookHint(string message)
     {
         if (bookHintText == null) return;
-
+        bookHint.SetActive(true);
         bookHintText.text = message;
         bookHintText.gameObject.SetActive(true);
         Invoke(nameof(HideBookHint), 6f);

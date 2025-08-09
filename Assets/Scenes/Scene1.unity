@@ -119,89 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &72001115
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 72001116}
-  - component: {fileID: 72001118}
-  - component: {fileID: 72001117}
-  m_Layer: 0
-  m_Name: Npc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &72001116
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72001115}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.366077, y: -0.98456085, z: -12.711584}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1901889696}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &72001117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72001115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead1814bb6630a7498c07cf3295c1782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hallwayLight: {fileID: 1764935283}
-  roomLight: {fileID: 1822213299}
-  Npc1: {fileID: 72001115}
-  Npc2: {fileID: 389596231}
-  Npc3: {fileID: 0}
-  flashLight: {fileID: 567217380}
-  outputText: {fileID: 1418287999}
-  objectiveTxt: {fileID: 294586443}
-  fuzeBox: {fileID: 2058798190}
-  effect: {fileID: 414519558}
-  audio: {fileID: 0}
-  hints:
-  - Not all doors open with keys.
-  - She left something behind near the stairs.
-  - The power isn't stable tonight.
-  - The mirror shows more than your reflection.
---- !u!114 &72001118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72001115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2318ea99c2ec137faa7b2fd3527561b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcManager: {fileID: 774917190}
-  shortName: 'Eleanor '
-  fullName: Eleanor Marrow
-  characterDescription: A trapped spirit bound to Room 301. Speaks in a calm, cryptic,
-    and unsettling manner. Hates being disturbed.
-  systemPrompt: You are Eleanor, trapped in room 301. You guard that room and don
-    allow people to enter it. You respond in short, eerie and disturbing way.
-  persistent: 0
-  inputField: {fileID: 1805148959}
-  outputMessage: {fileID: 1418287999}
 --- !u!4 &111402995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6142122716986571522, guid: 8d58068d5740b2b47990b0b351e9a12d, type: 3}
@@ -500,8 +417,8 @@ MonoBehaviour:
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 12
-  m_fontSizeMax: 14
+  m_fontSizeMin: 10
+  m_fontSizeMax: 11
   m_fontStyle: 8
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -980,39 +897,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &389596231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 389596232}
-  m_Layer: 0
-  m_Name: Duplicate Npc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &389596232
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389596231}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7708359, y: -3.9601417, z: -2.6440804}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2129322549}
-  - {fileID: 1420740747}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397019264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1439,7 @@ RectTransform:
   m_Children:
   - {fileID: 294586442}
   - {fileID: 2146290370}
+  - {fileID: 1017062581}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1984,55 +1869,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1442948990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &774917189
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 774917191}
-  - component: {fileID: 774917190}
-  m_Layer: 0
-  m_Name: NpcManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &774917190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774917189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ad34ea68d9d128e8e1df224f5ed892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameId: room301
-  functions: []
-  functionHandler:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &774917191
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774917189}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.366077, y: -0.98456085, z: -12.711584}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1901889696}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779979443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +1906,8 @@ MonoBehaviour:
     and unsettling manner. Hates being disturbed.
   systemPrompt: You are Eleanor, trapped in room 301. You guard that room and dont
     allow people to enter it. You respond in short, eerie and disturbing way.
-  persistent: 0
+  voiceId: 01955d76-ed5b-7451-92d6-5ef579d3ed28
+  persistent: 1
   inputField: {fileID: 1805148959}
   outputMessage: {fileID: 1418287999}
 --- !u!4 &779979445
@@ -2102,9 +1939,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hallwayLight: {fileID: 1764935283}
   roomLight: {fileID: 1822213299}
-  Npc1: {fileID: 1121520591}
-  Npc2: {fileID: 389596231}
-  Npc3: {fileID: 0}
   flashLight: {fileID: 567217380}
   outputText: {fileID: 1418287999}
   objectiveTxt: {fileID: 294586443}
@@ -2656,17 +2490,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameId: room301
+  TTS: 1
   functions:
   - name: TurnOffLight
     description: Used by the ghost Eleanor to unsettle or warn the player. Typically
       triggered when the player mentions entering Room 301, threatens to come closer,
       or challenges Eleanor. It turns off a specific Light GameObject in the environment
-      to heighten tension or signify her disapproval.
+      to heighten tension or signify her disapproval and scare the player
     functionArguments:
     - argumentName: Hallway
       argumentType: string
       argumentDescription: Name of the light object in the scene
       required: 0
+  - name: GiveHint
+    description: 'Provides a cryptic hint related to the current objective. Provide
+      hint to the player when the player asks where he can find the ghost, how to
+      meet you or how to unlock the door or asks for a clue or hint.You provide clues
+      like these : "The Flash Light does more than shining light" or "The cabinet
+      mirror shows more than your reflection."'
+    functionArguments: []
   functionHandler:
     m_PersistentCalls:
       m_Calls:
@@ -2674,6 +2516,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GhostInteractionManager, Assembly-CSharp
         m_MethodName: TurnOffLight
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hallway
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 779979446}
+        m_TargetAssemblyTypeName: GhostInteractionManager, Assembly-CSharp
+        m_MethodName: GiveHint
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2928,6 +2782,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3833577573151430018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1017062580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1017062581}
+  - component: {fileID: 1017062583}
+  - component: {fileID: 1017062582}
+  m_Layer: 5
+  m_Name: bookHint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1017062581
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017062580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 563443339}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -244.48145, y: -54.170288}
+  m_SizeDelta: {x: 488.9528, y: 76.2618}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1017062582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017062580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b806ac8a97974294fa625475e84795ea, type: 3}
+    m_FontSize: 33
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 6
+    m_MaxSize: 52
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Press Tab to open Book
+--- !u!222 &1017062583
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017062580}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1042399547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3287,87 +3220,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418287997}
   m_CullTransparentMesh: 1
---- !u!1 &1420740744
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1420740747}
-  - component: {fileID: 1420740746}
-  - component: {fileID: 1420740745}
-  m_Layer: 0
-  m_Name: Npc (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1420740745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420740744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead1814bb6630a7498c07cf3295c1782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hallwayLight: {fileID: 1764935283}
-  roomLight: {fileID: 0}
-  Npc1: {fileID: 0}
-  Npc2: {fileID: 389596231}
-  Npc3: {fileID: 1901889695}
-  flashLight: {fileID: 0}
-  outputText: {fileID: 1418287999}
-  objectiveTxt: {fileID: 0}
-  fuzeBox: {fileID: 0}
-  effect: {fileID: 0}
-  audio: {fileID: 0}
-  hints:
-  - The Flash Light does more than shining light
-  - The cabinet mirror shows more than your reflection.
---- !u!114 &1420740746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420740744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2318ea99c2ec137faa7b2fd3527561b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcManager: {fileID: 2129322548}
-  shortName: 'Eleanor '
-  fullName: Eleanor Marrow
-  characterDescription: A trapped spirit bound to Room 301. Speaks in a calm, cryptic,
-    and unsettling manner. Hates being disturbed.
-  systemPrompt: You are Eleanor, trapped in room 301. You guard that room and dont
-    allow people to enter it. You respond in short, eerie and disturbing way.
-  persistent: 1
-  inputField: {fileID: 1805148959}
-  outputMessage: {fileID: 1418287999}
---- !u!4 &1420740747
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420740744}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.174889, y: 1.7378733, z: -13.950746}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 389596232}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1442948989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4226,39 +4078,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1442948990}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
---- !u!1 &1901889695
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1901889696}
-  m_Layer: 0
-  m_Name: ThirdNpc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1901889696
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901889695}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.77013, y: -1.2377075, z: -3.8832417}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 774917191}
-  - {fileID: 72001116}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944645767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,72 +4510,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 19.688606, y: 55.896164, z: 53.25111}
   m_Center: {x: 7.57099, y: -0.05402565, z: 2.2455187}
---- !u!1 &2129322547
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2129322549}
-  - component: {fileID: 2129322548}
-  m_Layer: 0
-  m_Name: NpcManager (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2129322548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129322547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ad34ea68d9d128e8e1df224f5ed892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameId: room301
-  functions:
-  - name: GiveHint
-    description: Provides a cryptic hint related to the current objective. Provide
-      hint to the player when the player asks where he can find the ghost, how to
-      meet you or asks for a clue or hint.
-    functionArguments: []
-  functionHandler:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1420740745}
-        m_TargetAssemblyTypeName: GhostInteractionManager, Assembly-CSharp
-        m_MethodName: GiveHint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!4 &2129322549
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129322547}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.174889, y: 1.7378733, z: -13.950746}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 389596232}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146290369
 GameObject:
   m_ObjectHideFlags: 0
@@ -4791,8 +4544,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -307.09106, y: -59}
-  m_SizeDelta: {x: 548.6847, y: 85.9212}
+  m_AnchoredPosition: {x: -264.49, y: -412}
+  m_SizeDelta: {x: 528.97, y: 85.9212}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146290371
 MonoBehaviour:
@@ -17835,7 +17588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -40}
+  m_AnchoredPosition: {x: -50, y: -135}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &3035514549155581138
@@ -29869,6 +29622,7 @@ MonoBehaviour:
   playerCamera: {fileID: 4963817196621323469}
   bookUIObject: {fileID: 8572607429082375602}
   inputFieldUI: {fileID: 1805148957}
+  bookHint: {fileID: 1017062580}
   openBookSound: {fileID: 8300000, guid: cd6ca2cb535104a3bb39744c179b815a, type: 3}
   closeBookSound: {fileID: 8300000, guid: cd6ca2cb535104a3bb39744c179b815a, type: 3}
   audioSource: {fileID: 1008768612}
@@ -49938,8 +49692,6 @@ SceneRoots:
   - {fileID: 8397639263006151011}
   - {fileID: 3944438013001553629}
   - {fileID: 1121520592}
-  - {fileID: 389596232}
-  - {fileID: 1901889696}
   - {fileID: 463872665}
   - {fileID: 1442948990}
   - {fileID: 111854907}

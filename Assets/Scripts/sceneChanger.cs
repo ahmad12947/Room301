@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class sceneChanger : MonoBehaviour
 {
+
+
    public void changeScene()
     {
         SceneManager.LoadScene(1);

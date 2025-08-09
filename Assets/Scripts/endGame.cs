@@ -13,6 +13,8 @@ public class endGame : MonoBehaviour
 
     public void changeScene()
     {
+        Cursor.visible=true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(0);
     }
 }

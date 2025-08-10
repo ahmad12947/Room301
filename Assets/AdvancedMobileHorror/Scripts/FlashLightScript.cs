@@ -48,10 +48,9 @@ namespace AdvancedHorrorFPS
                 GameCanvas.Instance.ShowHint("Press F for Flashlight!");
             }
             HeroPlayerScript.Instance.FPSHands.SetActive(true);
-            if (!HeroPlayerScript.Instance.Hand_Pistol.activeInHierarchy && !HeroPlayerScript.Instance.Hand_Baseball.activeInHierarchy)
-            {
+            
                 HeroPlayerScript.Instance.Hand_FlashLight.SetActive(true);
-            }
+            
             isGrabbed = true;
         }
         private void Update()

@@ -44,6 +44,7 @@ public class DoorAndBookInteractor : MonoBehaviour
     public string newObjectiveAfterFuse = "Find a way to unlock Room 301";
 
     public AudioClip fuzeAudioClip, safeAudioClip;
+
     private void Start()
     {
         if (interactionPrompt != null)
@@ -102,7 +103,7 @@ public class DoorAndBookInteractor : MonoBehaviour
 
             // DOOR INTERACTION
             Door door = hitObject.GetComponent<Door>();
-            if (door != null )
+            if (door != null)
             {
                 if (door != null && door.enabled)
                 {
@@ -126,10 +127,16 @@ public class DoorAndBookInteractor : MonoBehaviour
             if (hitObject.CompareTag("Book"))
             {
                 currentBookWorld = hitObject;
-                ShowPrompt("[E] Read Book");
 
-                if (Input.GetKeyDown(KeyCode.E))
+                // Change prompt after first read
+                if (hasUnlockedBook)
+                    ShowPrompt("[Tab] Open/Close Book");
+                else
+                    ShowPrompt("[E] Read Book");
+
+                if (Input.GetKeyDown(KeyCode.E) && !hasUnlockedBook)
                 {
+                    ShowPrompt("[Tab] Open/Close Book");
                     objectiveText.text = "Find out where the ghost lives";
                     Player2TTS.SpeakWithVoice("The pen awaits your question From 301", "01955d76-ed5b-7451-92d6-5ef579d3ed28");
                     hasUnlockedBook = true;
@@ -138,7 +145,6 @@ public class DoorAndBookInteractor : MonoBehaviour
                 return;
             }
 
-            // SAFE INTERACTION
             // SAFE INTERACTION
             if (hitObject.CompareTag("safe"))
             {
@@ -175,7 +181,6 @@ public class DoorAndBookInteractor : MonoBehaviour
                         objectiveText.text = newObjectiveAfterFuse;
                     fuseObject.GetComponent<BoxCollider>().enabled = false;
                     AudioSource.PlayClipAtPoint(fuzeAudioClip, transform.position);
-                    /*  fuseObject.SetActive(false);*/ // optional: disable fuse after interaction
                 }
                 return;
             }
@@ -241,7 +246,7 @@ public class DoorAndBookInteractor : MonoBehaviour
 
         if (closeBookSound && audioSource)
             audioSource.PlayOneShot(closeBookSound);
-        bookHint.SetActive(true );
+        bookHint.SetActive(true);
         if (bookAnimator)
         {
             bookAnimator.Play("Close");
@@ -260,7 +265,6 @@ public class DoorAndBookInteractor : MonoBehaviour
         if (!bookHintShown)
         {
             bookHintShown = true;
-            
         }
     }
 

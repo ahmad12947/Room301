@@ -2,9 +2,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class sceneChanger : MonoBehaviour
 {
+ 
+    private void Start()
+    {
+        //Invoke("InitialMessage", 2);
+    }
 
+   
 
-   public void changeScene()
+    public void changeScene()
     {
         SceneManager.LoadScene(1);
     }

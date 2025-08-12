@@ -73,6 +73,7 @@ public class Player2NpcResponseListener : MonoBehaviour
 
     private void Start()
     {
+        StartListening();
         // Don't auto-start - let NpcManager control when to start
         Debug.Log($"Player2NpcResponseListener initialized with GameId: {_gameId}");
     }
@@ -163,6 +164,7 @@ public class Player2NpcResponseListener : MonoBehaviour
                 }
                 else
                 {
+                   
                     Debug.Log("Stopping listener due to error while not listening");
                     break;
                 }
@@ -298,6 +300,7 @@ public class Player2NpcResponseListener : MonoBehaviour
         
         if (_reconnectAttempts > _maxReconnectAttempts)
         {
+            ttsErrorFix.Instance.setUpCanvas();
             Debug.LogError($"Max reconnection attempts ({_maxReconnectAttempts}) reached. Stopping listener.");
             _isListening = false;
             return;

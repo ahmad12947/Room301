@@ -17,4 +17,9 @@ public class endGame : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(0);
     }
+    public void exitToMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
 }
